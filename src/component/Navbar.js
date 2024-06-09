@@ -15,14 +15,14 @@ function Navbar() {
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <div className="hidden md:flex space-x-4">
-            <a href="#about" className="text-white">About</a>
+            <a href="#home" className="text-white">Home</a>
             <a href="#projects" className="text-white">Projects</a>
             <a href="#skills" className="text-white">Skills</a>
             <a href="#contacts" className="text-white">Contacts</a>
             <a href="#articles" className="text-white">Articles</a>
           </div>
         </div>
-        <div className="hidden md:flex space-x-4">
+        <div className="md:flex space-x-4">
           <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-white">
             <FontAwesomeIcon icon={faGithub} />
           </a>
@@ -39,17 +39,11 @@ function Navbar() {
       {isOpen && (
         <div className="md:hidden">
           <div className="flex flex-col space-y-2 p-4">
-            <a href="#about" className="text-white" onClick={toggleMenu}>About</a>
+            <a href="#home" className="text-white" onClick={toggleMenu}>Home</a>
             <a href="#projects" className="text-white" onClick={toggleMenu}>Projects</a>
             <a href="#skills" className="text-white" onClick={toggleMenu}>Skills</a>
             <a href="#contacts" className="text-white" onClick={toggleMenu}>Contacts</a>
             <a href="#articles" className="text-white" onClick={toggleMenu}>Articles</a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-white" onClick={toggleMenu}>
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white" onClick={toggleMenu}>
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
           </div>
         </div>
       )}

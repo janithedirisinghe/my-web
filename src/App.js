@@ -1,16 +1,19 @@
 import React from 'react';
 import Navbar from './component/Navbar';
-import About from './component/About';
 import Projects from './component/Projects';
-import Skills from './component/Skills';
 import Contacts from './component/Contacts';
 import Articles from './component/Articles';
+import Home from './component/Home';
+import Skills from './component/Skills';
+
+
 
 function App() {
+
   return (
     <div>
       <Navbar />
-      <About />
+      <Home />
       <Projects />
       <Skills />
       <Contacts />
