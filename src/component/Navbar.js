@@ -19,7 +19,8 @@ function Navbar() {
             <a href="#projects" className="text-white">Projects</a>
             <a href="#skills" className="text-white">Skills</a>
             <a href="#contacts" className="text-white">Contacts</a>
-            <a href="#articles" className="text-white">Articles</a>
+            <a href="#Gallery" className="text-white">Gallery</a>
+            <a href="#AboutMe" className="text-white">AboutMe</a>
           </div>
         </div>
         <div className="md:flex space-x-4">
@@ -42,8 +43,9 @@ function Navbar() {
             <a href="#home" className="text-white" onClick={toggleMenu}>Home</a>
             <a href="#projects" className="text-white" onClick={toggleMenu}>Projects</a>
             <a href="#skills" className="text-white" onClick={toggleMenu}>Skills</a>
+            <a href="#Gallery" className="text-white" onClick={toggleMenu}>Gallery</a>
+            <a href="#AboutMe" className="text-white" onClick={toggleMenu}>AboutMe</a>
             <a href="#contacts" className="text-white" onClick={toggleMenu}>Contacts</a>
-            <a href="#articles" className="text-white" onClick={toggleMenu}>Articles</a>
           </div>
         </div>
       )}

@@ -2,9 +2,10 @@ import React from 'react';
 import Navbar from './component/Navbar';
 import Projects from './component/Projects';
 import Contacts from './component/Contacts';
-import Articles from './component/Articles';
+import AboutMe from './component/AboutMe';
 import Home from './component/Home';
 import Skills from './component/Skills';
+import Gallery from './component/Gallery';
 
 
 
@@ -16,8 +17,9 @@ function App() {
       <Home />
       <Projects />
       <Skills />
+      <Gallery />
+      <AboutMe />
       <Contacts />
-      <Articles />
     </div>
   );
 }
