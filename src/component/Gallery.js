@@ -1,67 +1,46 @@
 import React, { useState } from 'react';
+import image1 from './images/gal1.jpg'
+import image2 from './images/gal2.jpg'
+import image3 from './images/gal3.jpg'
+import image4 from './images/gal4.jpg'
+import image5 from './images/gal5.jpg'
+import image6 from './images/gal6.jpg'
+import image7 from './images/gal7.jpg'
+import image8 from './images/gal8.jpg'
+import image9 from './images/gal9.jpg'
+import image10 from './images/gal10.jpg'
+import image11 from './images/gal11.jpeg'
+import image12 from './images/gal12.jpeg'
+import image13 from './images/gal13.jpeg'
+import image14 from './images/gal14.jpeg'
+import image15 from './images/gal15.jpeg'
+import image16 from './images/gal16.jpeg'
+import image17 from './images/gal17.jpeg'
+import image18 from './images/gal18.jpeg'
+import image19 from './images/gal19.jpeg'
+import image20 from './images/gal20.jpeg'
 
 const images = [
-  {
-    src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg',
-    alt: 'Image 1',
-    description: 'Description for Image 1',
-  },
-  {
-    src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg',
-    alt: 'Image 2',
-    description: 'Description for Image 2',
-  },
-  {
-    src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg',
-    alt: 'Image 3',
-    description: 'Description for Image 3',
-  },
-  {
-    src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg',
-    alt: 'Image 4',
-    description: 'Description for Image 4',
-  },
-  {
-    src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg',
-    alt: 'Image 5',
-    description: 'Description for Image 5',
-  },
-  {
-    src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg',
-    alt: 'Image 6',
-    description: 'Description for Image 6',
-  },
-  {
-    src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg',
-    alt: 'Image 7',
-    description: 'Description for Image 7',
-  },
-  {
-    src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg',
-    alt: 'Image 8',
-    description: 'Description for Image 8',
-  },
-  {
-    src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg',
-    alt: 'Image 9',
-    description: 'Description for Image 9',
-  },
-  {
-    src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg',
-    alt: 'Image 10',
-    description: 'Description for Image 10',
-  },
-  {
-    src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg',
-    alt: 'Image 11',
-    description: 'Description for Image 11',
-  },
-  {
-    src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg',
-    alt: 'Image 12',
-    description: 'Description for Image 12',
-  },
-  // Add more images as needed
+  { src: image1, alt: 'Image 1', description: 'Description for Image 1' },
+  { src: image2, alt: 'Image 2', description: 'Description for Image 2' },
+  { src: image5, alt: 'Image 3', description: 'Description for Image 3' },
+  { src: image4, alt: 'Image 4', description: 'Description for Image 4' },
+  { src: image3, alt: 'Image 5', description: 'Description for Image 5' },
+  { src: image6, alt: 'Image 6', description: 'Description for Image 6' },
+  { src: image7, alt: 'Image 7', description: 'Description for Image 7' },
+  { src: image8, alt: 'Image 8', description: 'Description for Image 8' },
+  { src: image9, alt: 'Image 9', description: 'Description for Image 9' },
+  { src: image10, alt: 'Image 10', description: 'Description for Image 10' },
+  { src: image11, alt: 'Image 11', description: 'Description for Image 11' },
+  { src: image12, alt: 'Image 12', description: 'Description for Image 12' },
+  { src: image13, alt: 'Image 13', description: 'Description for Image 13' },
+  { src: image14, alt: 'Image 14', description: 'Description for Image 14' },
+  { src: image15, alt: 'Image 15', description: 'Description for Image 15' },
+  { src: image16, alt: 'Image 16', description: 'Description for Image 16' },
+  { src: image17, alt: 'Image 17', description: 'Description for Image 17' },
+  { src: image18, alt: 'Image 18', description: 'Description for Image 18' },
+  { src: image19, alt: 'Image 19', description: 'Description for Image 19' },
+  { src: image20, alt: 'Image 20', description: 'Description for Image 20' },
 ];
 
 function Gallery() {
@@ -75,10 +54,10 @@ function Gallery() {
     setSelectedImage(null);
   };
 
-  const renderImageGrid = (startIndex, endIndex) => {
+  const renderImageGrid = () => {
     return (
-      <div className="grid gap-4">
-        {images.slice(startIndex, endIndex).map((image, index) => (
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {images.map((image, index) => (
           <div key={index} className="relative group">
             <img
               className="h-300 max-w-full rounded-lg cursor-pointer group-hover:opacity-80 transition duration-300"
@@ -97,14 +76,9 @@ function Gallery() {
 
   return (
     <div className="relative  bg-gray-900 p-5 text-center">
-        <h2 className="text-4xl font-bold mb-20 text-white">Gallery</h2>
+      <h2 className="text-5xl font-extrabold mb-8 text-red-700 drop-shadow-lg">Gallery</h2>
       <div className="p-4 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {renderImageGrid(0, 3)}
-          {renderImageGrid(3, 6)}
-          {renderImageGrid(6, 9)}
-          {renderImageGrid(9, 12)}
-        </div>
+        {renderImageGrid()}
         {selectedImage && (
           <div
             className="fixed inset-0 flex items-center justify-center z-50 bg-gray-800 bg-opacity-75"
@@ -113,8 +87,7 @@ function Gallery() {
             <div className="bg-white p-6 rounded-lg max-w-3xl relative">
               <button
                 onClick={closeModal}
-                className="absolute top-2 right-2 text-gray-700"
-              >
+                className="absolute top-2 right-2 text-gray-700">
                 &times;
               </button>
               <img

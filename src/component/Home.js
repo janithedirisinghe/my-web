@@ -20,7 +20,7 @@ function Model(props) {
 
 function Home() {
   return (
-    <section id="home" className="py-20 bg-gray-900 text-white relative overflow-hidden">
+    <section id="home" className="py-20 bg-gray-900 text-white relative overflow-hidden p-3">
       <div className="container mx-auto text-center relative z-10">
         <h1 className="text-5xl font-bold mb-6 halloween-font">
           Welcome to the Halloween Code Fest
