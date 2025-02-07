@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import ProjectModal from './Models/ProjectsModel';
 import 'tailwindcss/tailwind.css'; // Ensure you have Tailwind CSS imported
 import './CSS/Project.css';
-import pic1 from './images/pro1.png';
-import pic2 from './images/pro1a.png';
-import pic3 from './images/pro1b.png';
-import pic4 from './images/pro1c.png';
-import pic5 from './images/pro1d.png';
-import pr2a from './images/pro2a.jpeg';
-import pr2b from './images/pro2b.jpeg';
-import pr2c from './images/pro2c.jpeg';
-import pr2d from './images/pro2d.png';
-import pr2e from './images/pro2e.jpeg';
+const pic1 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//pro1.png';
+const pic2 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//pro1a.png';
+const pic3 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//pro1b.png';
+const pic4 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//pro1c.png';
+const pic5 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//pro1d.png';
+const pr2a = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//pro2a.jpeg';
+const pr2b = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//pro2b.jpeg';
+const pr2c = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//pro2c.jpeg';
+const pr2d = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//pro2d.png';
+const pr2e = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//pro2e.jpeg';
 
 const projects = [
   {
@@ -46,7 +46,6 @@ current resource management challenges, thereby achieving enhanced project effic
 informed decision-making. `,
     smallDescription: `In the dynamic landscape of project management, the allocation and management of resources remain a significant challenge for organizations striving for efficiency and optimal outcomes. 
 This challenge typically involves resource planning and scheduling decisions.`,
-    videoUrl: 'https://youtu.be/s_BPSwvJGO4', // Replace with actual video ID
     technologies: ['SPA', 'Angular', 'TypeScript', 'Bootstrap', 'Nest.js', 'MySQL'],
     images: [
       pic1,
@@ -61,7 +60,6 @@ This challenge typically involves resource planning and scheduling decisions.`,
     title: 'Real-Time Monitoring of Gas Station Underground Fuel Tanks Using IoT Technology',
     description: 'This project focuses on developing an IoT-based solution for real-time monitoring of underground fuel tanks in gas stations. By integrating temperature sensors (DS18B20), IoT devices, and cloud-based systems, the project enables continuous monitoring of fuel levels, temperature, and tank conditions, ensuring operational safety and efficiency. The system is scalable and can be deployed in various gas station sizes and geographic locations, offering fuel station operators a more reliable and automated method for tracking tank performance and preventing potential hazards. The project was successfully presented and published at the 17th International Research Conference – IRC KDU 2024.',
     smallDescription: 'This project focuses on developing an IoT-based solution for real-time monitoring of underground fuel tanks in gas stations. By integrating temperature sensors (DS18B20), IoT devices, and cloud-based systems, the project enables continuous monitoring of fuel levels, temperature, and tank conditions, ensuring operational safety and efficiency.',
-    videoUrl: 'https://www.youtube.com', // Replace with actual video URL
     technologies: ['HTML', 'CSS', 'JawaScript', 'ESP32', 'Firebase', 'Arduino'],
     images: [
       pr2a,
@@ -79,7 +77,6 @@ This challenge typically involves resource planning and scheduling decisions.`,
     smallDescription: `Developed a personalised portfolio platform to showcase my professional
 accomplishments, skills, and projects
 `,
-    videoUrl: 'https://www.youtube.com/embed/example3', // Replace with actual video URL
     technologies: ['React', 'Threejs', 'Tailwind'],
     images: [
     ]
@@ -102,6 +99,34 @@ them via WhatsApp or email
     images: [
     ]
   },
+  {id: 5,
+    title: 'QR Based Order Management System',
+    description: `I contributed to the development of a QR-based order management system using React for the frontend, NestJS for the backend, and MySQL for the database. The system allows customers to browse menus, place orders, and make payments directly from their smartphones by scanning QR codes, enhancing the dining experience in high-traffic restaurants. The platform streamlines the ordering process, reduces wait times, and increases operational efficiency, improving customer satisfaction. The system is designed to be scalable, responsive, and user-friendly, ensuring seamless integration into restaurant environments.`,
+    smallDescription: `Developed a QR-based order management system to enhance dining efficiency and customer satisfaction in high-traffic restaurants.`,
+    technologies: ['React', 'NestJS', 'MySQL'],
+    images: [
+    ]
+    },
+    {
+      id: 6,
+title: 'WedEase - Wedding Service Provider Portal',
+description: `I am developing *WedEase*, a platform that connects customers and wedding service providers to discover, compare, and book various wedding services. The platform, built with Angular for the frontend, Spring Boot for the backend, and MySQL for the database, provides an intuitive user experience for both clients and vendors. It enables seamless communication, booking, and management of wedding services, making the wedding planning process more efficient and accessible. This project aims to create a comprehensive and reliable solution for couples to find trusted wedding vendors while offering service providers a streamlined method to manage bookings and client interactions.`,
+smallDescription: `Building a wedding service provider portal to connect customers with vendors for discovering, comparing, and booking wedding services.`,
+technologies: ['Angular', 'Spring Boot', 'MySQL'],
+images: [
+]
+
+    },
+    {
+      id: 7,
+title: 'Clothing Store E-commerce Platform',
+description: `Contributed to the development of a scalable e-commerce platform for a clothing store using a microservices architecture. As the backend developer for the product microservice, I was responsible for managing product data, ensuring efficient data handling, and optimizing performance. The system was built with React for the frontend, Spring Boot for the backend, and utilized MongoDB and MySQL for data storage. The platform supports seamless product management, secure transactions, and a smooth shopping experience for users.`,
+smallDescription: `Developed the product microservice for a clothing store e-commerce platform using a microservices architecture.`,
+technologies: ['React', 'Spring Boot', 'MongoDB', 'MySQL'],
+images: [
+]
+
+    }
 ];
  
 function Projects() {

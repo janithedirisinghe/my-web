@@ -1,9 +1,9 @@
 import React from 'react';
-import myPicture from './images/profile-pic.png';
+const myPicture = "https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images/profile-pic.png";
 
 function AboutMe() {
   return (
-    <section className="py-20 bg-gray-900 text-white p-6">
+    <section id='about-me' className="py-20 bg-gray-900 text-white p-6">
       <div className="container mx-auto flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 w-full mt-8 md:mt-0 md:pr-8">
           <h2 className="text-3xl font-bold mb-4">About Me</h2>
@@ -15,7 +15,7 @@ function AboutMe() {
             I believe in continuous learning and improvement, and I am always eager to take on new challenges that allow me to grow both personally and professionally.
           </p>
           <a
-            href="https://example.com/path/to/your/cv.pdf"
+            href="https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//Janith%20Edirisinghe-CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block mt-4 py-3 px-6 bg-red-700 hover:bg-red-800 text-white font-bold rounded-lg transition duration-200 transform hover:scale-105"
@@ -28,6 +28,7 @@ function AboutMe() {
         </div>
       </div>
     </section>
+    
   );
 }
 

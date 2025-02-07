@@ -17,10 +17,10 @@ function Navbar() {
           <div className="hidden md:flex space-x-4">
             <a href="#home" className="text-white">Home</a>
             <a href="#projects" className="text-white">Projects</a>
-            <a href="#skills" className="text-white">Skills</a>
+            <a href="#what-i-do" className="text-white">Skills</a>
             <a href="#contacts" className="text-white">Contacts</a>
-            <a href="#Gallery" className="text-white">Gallery</a>
-            <a href="#AboutMe" className="text-white">AboutMe</a>
+            <a href="#galary" className="text-white">Gallery</a>
+            <a href="#about-me" className="text-white">AboutMe</a>
           </div>
         </div>
         <div className="md:flex space-x-4">

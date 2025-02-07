@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
-import image1 from './images/gal1.jpg'
-import image2 from './images/gal2.jpg'
-import image3 from './images/gal3.jpg'
-import image4 from './images/gal4.jpg'
-import image5 from './images/gal5.jpg'
-import image6 from './images/gal6.jpg'
-import image7 from './images/gal7.jpg'
-import image8 from './images/gal8.jpg'
-import image9 from './images/gal9.jpg'
-import image10 from './images/gal10.jpg'
-import image11 from './images/gal11.jpeg'
-import image12 from './images/gal12.jpeg'
-import image13 from './images/gal13.jpeg'
-import image14 from './images/gal14.jpeg'
-import image15 from './images/gal15.jpeg'
-import image16 from './images/gal16.jpeg'
-import image17 from './images/gal17.jpeg'
-import image18 from './images/gal18.jpeg'
-import image19 from './images/gal19.jpeg'
-import image20 from './images/gal20.jpeg'
+const image1 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal1.jpg'
+const image2 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal2.jpg'
+const image3 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal3.jpg'
+const image4 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal4.jpg'
+const image5 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal5.jpg'
+const image6 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal6.jpg'
+const image7 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal7.jpg'
+const image8 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal8.jpg'
+const image9 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal9.jpg'
+const image10 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal10.jpg'
+const image11 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal11.jpeg'
+const image12 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal12.jpeg'
+const image13 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal13.jpeg'
+const image14 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal14.jpeg'
+const image15 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal15.jpeg'
+const image16 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal16.jpeg'
+const image17 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal17.jpeg'
+const image18 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal18.jpeg'
+const image19 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal19.jpeg'
+const image20 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal20.jpeg'
 
 const images = [
   { src: image1, alt: 'Image 1', description: 'Description for Image 1' },
@@ -45,6 +45,7 @@ const images = [
 
 function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [showAllImages, setShowAllImages] = useState(false);
 
   const openModal = (image) => {
     setSelectedImage(image);
@@ -55,9 +56,10 @@ function Gallery() {
   };
 
   const renderImageGrid = () => {
+    const imagesToShow = showAllImages ? images : images.slice(0, 8);
     return (
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {images.map((image, index) => (
+        {imagesToShow.map((image, index) => (
           <div key={index} className="relative group">
             <img
               className="h-300 max-w-full rounded-lg cursor-pointer group-hover:opacity-80 transition duration-300"
@@ -75,10 +77,18 @@ function Gallery() {
   };
 
   return (
-    <div className="relative  bg-gray-900 p-5 text-center">
+    <div id='galary' className="relative bg-gray-900 p-5 text-center">
       <h2 className="text-5xl font-extrabold mb-8 text-red-700 drop-shadow-lg">Gallery</h2>
       <div className="p-4 relative z-10">
         {renderImageGrid()}
+        {!showAllImages && (
+          <button
+            className="mt-4 px-4 py-2 bg-red-700 text-white rounded-lg"
+            onClick={() => setShowAllImages(true)}
+          >
+            See More
+          </button>
+        )}
         {selectedImage && (
           <div
             className="fixed inset-0 flex items-center justify-center z-50 bg-gray-800 bg-opacity-75"
