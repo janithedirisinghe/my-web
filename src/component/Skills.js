@@ -1,142 +1,81 @@
-/* eslint-disable react/no-unknown-property */
-/* eslint-disable no-undef */
-import React, { useRef, Suspense, useEffect, useState } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { useGLTF, Stage, PresentationControls, useAnimations } from '@react-three/drei';
-import fullStackImage from './images/FullStack.png';
-import frontEndImage from './images/FrontEnd.png';
-import backendImage from './images/backend.png';
-import langvageImage from './images/proLan.png';
-import versionImage from './images/versionImage.jpg';
-import dataBaseImage from './images/dataBase.png';
-import "./CSS/Home.css"; // Custom CSS file for styles
+import React from 'react';
 
-function Model({ path, scale, ...props }) {
-  const { scene, animations } = useGLTF(path);
-  const modelRef = useRef();
-  const { actions } = useAnimations(animations, modelRef);
+const angular = "https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//angular.png"
+const nestjs = "https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//nest.png"
+const nextjs = "https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//next.png"
+const nodejs = "https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//nodjs.png"
+const tailwind = "https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//tailwind.png"
+const mysql = "https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//MySQL.png"
+const spring = "https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//spring.png"
+const react = "https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//react.png"
+const boostrap = "https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//Bootstrap.png"
+const mongodb = "https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//mongodb.png"
 
-  useFrame(() => {
-    if (modelRef.current) {
-      modelRef.current.rotation.y += 0.01; // Optional: Keeps the model rotating
-    }
-  });
+const skills = [
+  { title: 'Angular', description: 'A powerful framework for building dynamic web applications.', image: angular },
+  { title: 'NestJS', description: 'A progressive Node.js framework for scalable applications.', image: nestjs },
+  { title: 'Next.js', description: 'A React framework for production-grade applications.', image: nextjs },
+  { title: 'Node.js', description: 'A runtime for building scalable server-side applications.', image: nodejs },
+  { title: 'Tailwind CSS', description: 'A utility-first CSS framework for modern UI design.', image: tailwind },
+  { title: 'MySQL', description: 'A reliable relational database management system.', image: mysql },
+  { title: 'Spring Boot', description: 'An opinionated framework for Java-based applications.', image: spring },
+  { title: 'React', description: 'A JavaScript library for building user interfaces.', image: react },
+  { title: 'Bootstrap', description: 'A popular CSS framework for responsive web design.', image: boostrap },
+  { title: 'MongoDB', description: 'A flexible NoSQL database for modern applications.', image: mongodb },
+];
 
-  useEffect(() => {
-    if (actions) {
-      actions[Object.keys(actions)[0]]?.play(); // Play the first animation
-    }
-  }, [actions]);
-
-  return <primitive ref={modelRef} object={scene} scale={scale} {...props} />;
-}
-
-const Skills = () => {
-  const skills = [
-    {
-      name: 'Full Stack Development',
-      path: '/walleanimated.glb',
-      scale: 0.4,
-      description: `I have strong skills in both frontend and backend development...`,
-      image: fullStackImage,
-    },
-    {
-      name: 'Front-End Development',
-      path: '/a.i._c.o.r.e.glb',
-      scale: 2,
-      description: `I have extensive experience in frontend development using HTML and CSS...`,
-      image: frontEndImage,
-    },
-    {
-      name: 'Back-End Development',
-      path: '/robot_carton.glb',
-      scale: 1.5,
-      description: `On the backend, I work with technologies such as NestJS, Express.js...`,
-      image: backendImage,
-    },
-    {
-      name: 'Programming Languages',
-      path: '/magnetbot_animated.glb',
-      scale: 0.4,
-      description: `I am proficient in various programming languages including C, Java, JavaScript...`,
-      image: langvageImage,
-    },
-    {
-      name: 'Version Control and Collaboration',
-      path: '/stylized_robot_transform.glb',
-      scale: 0.4,
-      description: `I use GitHub for version control, allowing me to track changes...`,
-      image: versionImage,
-    },
-    {
-      name: 'Database and Data Management',
-      path: '/trebble_-_ratchet_and_clank_npc.glb',
-      scale: 2,
-      description: `For database management, I am skilled in both MySQL and MongoDB...`,
-      image: dataBaseImage,
-    },
-  ];
-
-  const [selectedSkill, setSelectedSkill] = useState(skills[0]);
-
-  const handleClick = (skill) => {
-    setSelectedSkill(skill);
-  };
-
+const WhatIDo = () => {
   return (
-    <section id="skills" className="py-20 bg-gray-900 text-white relative overflow-hidden p-3">
-      <div className="container mx-auto text-center relative z-10">
-        <h2 className="text-5xl font-extrabold mb-8 text-red-700 drop-shadow-lg animate__animated animate__fadeIn animate__delay-1s">Skills</h2>
-        <div className="flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-4">
-          <div className="w-full md:w-1/3 overflow-y-auto h-96 mb-8 md:mb-0 no-scrollbar rounded-lg border border-gray-700">
-            {skills.map((skill) => (
+    <section id="what-i-do" className="py-20 bg-gray-900 text-white px-6">
+      <div className="container mx-auto text-center">
+        <h2 className="text-5xl font-extrabold mb-8 text-red-700 drop-shadow-lg">What I Do</h2>
+        
+        <div className="overflow-x-auto flex space-x-6 p-4 snap-x" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          <style>
+            {`
+              #what-i-do .overflow-x-auto::-webkit-scrollbar {
+                display: none;
+              }
+              @keyframes scroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-320px * ${skills.length})); }
+              }
+              #what-i-do .scrolling-loop {
+                display: flex;
+                animation: scroll 20s linear infinite;
+              }
+            `}
+          </style>
+          <div className="scrolling-loop">
+            {skills.map((skill, index) => (
               <div
-                key={skill.name}
-                className={`p-4 cursor-pointer border-b border-gray-700 transition-all duration-200 ${selectedSkill.name === skill.name ? 'bg-gray-700' : 'bg-gray-800 hover:bg-gray-700'}`}
-                onClick={() => handleClick(skill)}
+                key={index}
+                className="min-w-[320px] bg-cover bg-center rounded-2xl p-4 shadow-lg snap-center relative flex items-center justify-center text-center min-h-96"
+                style={{ backgroundImage: `url(${skill.image})`, backdropFilter: 'blur(10px)' }}
               >
-                <p className="text-lg font-bold">{skill.name}</p>
+                <div className="bg-black bg-opacity-50 p-6 rounded-lg w-full h-full flex flex-col justify-center items-center">
+                  <h3 className="text-4xl font-bold text-white drop-shadow-md">{skill.title}</h3>
+                  <p className="mt-3 text-lg text-gray-300">{skill.description}</p>
+                </div>
+              </div>
+            ))}
+            {skills.map((skill, index) => (
+              <div
+                key={index + skills.length}
+                className="min-w-[320px] bg-cover bg-center rounded-2xl p-5 shadow-lg snap-center relative flex items-center justify-center text-center min-h-96"
+                style={{ backgroundImage: `url(${skill.image})`, backdropFilter: 'blur(10px)' }}
+              >
+                <div className="bg-black bg-opacity-50 p-6 rounded-lg w-full h-full flex flex-col justify-center items-center">
+                  <h3 className="text-4xl font-bold text-white drop-shadow-md">{skill.title}</h3>
+                  <p className="mt-3 text-lg text-gray-300">{skill.description}</p>
+                </div>
               </div>
             ))}
           </div>
-          <div className="flex justify-center items-center w-full md:w-2/3 h-96 rounded-lg bg-gray-800 bg-opacity-50 p-4">
-            <Suspense fallback={<div>Loading...</div>}>
-              <Canvas dpr={[1, 2]} shadows camera={{ fov: 45 }} style={{ position: 'relative', width: '100%', height: '100%' }}>
-                <PresentationControls speed={1.5} global zoom={0.5} polar={[-0.1, Math.PI / 4]}>
-                  <Stage environment="studio">
-                    <Model path={selectedSkill.path} scale={selectedSkill.scale} />
-                  </Stage>
-                </PresentationControls>
-              </Canvas>
-            </Suspense>
-          </div>
         </div>
-        {selectedSkill && (
-          <div className="mt-10 p-4 bg-gray-800 bg-opacity-75 rounded-lg text-left shadow-lg animate__animated animate__fadeIn animate__delay-2s">
-            <div className="flex items-center justify-center mb-4">
-              <img src={selectedSkill.image} alt={selectedSkill.name} className="w-20 h-20 rounded-full border-4 border-gray-700 shadow-md" />
-            </div>
-            <h3 className="text-2xl font-bold">{selectedSkill.name}</h3>
-            <p className="mt-2">{selectedSkill.description}</p>
-          </div>
-        )}
       </div>
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-red-900 to-transparent opacity-25 animate-pulse"></div>
     </section>
   );
 };
 
-export default Skills;
-
-// CSS for hiding scrollbar
-const style = document.createElement('style');
-style.innerHTML = `
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-`;
-document.head.appendChild(style);
+export default WhatIDo;

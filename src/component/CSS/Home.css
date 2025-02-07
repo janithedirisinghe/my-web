@@ -3,3 +3,30 @@
 .halloween-font {
   font-family: 'Creepster', cursive;
 }
+
+@keyframes shine {
+  0% {
+    background-position: -200%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+.shiny-text {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5.5s infinite linear;
+}
+
+.subtext-shimmer {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4, #ffdde1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s infinite alternate;
+}
