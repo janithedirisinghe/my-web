@@ -112,7 +112,7 @@ function Gallery() {
           </div>
         )}
       </div>
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-red-900 to-transparent opacity-25 animate-pulse"></div>
+      {/* <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-red-900 to-transparent opacity-25 animate-pulse"></div> */}
     </div>
   );
 }
