@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProjectModal from './Models/ProjectsModel';
 import 'tailwindcss/tailwind.css'; // Ensure you have Tailwind CSS imported
 import './CSS/Project.css';
@@ -131,6 +131,31 @@ images: [
  
 function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const section = document.getElementById('projects');
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => {
+      if (section) {
+        observer.unobserve(section);
+      }
+    };
+  }, []);
 
   const openModal = (project) => {
     setSelectedProject(project);
@@ -143,22 +168,68 @@ function Projects() {
   return (
     <section id="projects" className="py-20 bg-gray-900 text-white relative overflow-hidden">
       <div className="animated-bg absolute inset-0 z-0"></div>
-      <div className="container mx-auto text-center relative z-10">
-        <h2 className="text-5xl font-extrabold mb-8 text-red-700 drop-shadow-lg">My Projects</h2>
+      <div className="container mx-auto text-center relative z-10 px-4">
+        <h2 className={`text-5xl font-extrabold mb-12 text-red-700 drop-shadow-lg transition-all duration-1000 transform ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+        }`}>My Projects</h2>
         <div className="flex flex-wrap justify-center gap-8">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <div
               key={project.id}
-              className="relative overflow-hidden rounded-lg shadow-lg bg-gray-800 hover:bg-gray-700 transform transition duration-300 hover:scale-105 p-4"
-              style={{ width: '300px', height: '400px', border: '2px solid #444', cursor: 'pointer' }} // Fixed size for project containers
+              className={`group relative overflow-hidden rounded-xl shadow-2xl bg-gradient-to-br from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 p-6 cursor-pointer border-2 border-gray-700 hover:border-orange-500/50 ${
+                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+              }`}
+              style={{ 
+                width: '320px', 
+                minHeight: '420px',
+                transitionDelay: `${index * 100}ms`
+              }}
               onClick={() => openModal(project)}
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-90"></div>
-              <div className="absolute top-0 left-0 w-full bg-opacity-75 p-4">
-                <h3 className="text-lg font-bold mb-2 text-white">{project.title}</h3>
-                <div className="text-gray-200 overflow-y-scroll h-50 custom-scrollbar p-2 rounded">
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+              
+              {/* Content */}
+              <div className="relative z-10 h-full flex flex-col">
+                <h3 className="text-xl font-bold mb-4 text-white group-hover:text-orange-400 transition-colors duration-300 line-clamp-2">
+                  {project.title}
+                </h3>
+                
+                <div className="text-gray-300 group-hover:text-gray-200 overflow-y-auto flex-grow custom-scrollbar p-3 rounded bg-black/20 mb-4 text-sm leading-relaxed">
                   {project.smallDescription}
                 </div>
+                
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.technologies.slice(0, 4).map((tech, idx) => (
+                    <span 
+                      key={idx}
+                      className="px-3 py-1 bg-orange-900/40 text-orange-300 text-xs rounded-full border border-orange-700/50 group-hover:bg-orange-800/60 group-hover:border-orange-500/70 transition-all duration-300"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                  {project.technologies.length > 4 && (
+                    <span className="px-3 py-1 bg-red-900/40 text-red-300 text-xs rounded-full border border-red-700/50">
+                      +{project.technologies.length - 4}
+                    </span>
+                  )}
+                </div>
+                
+                {/* Hover indicator */}
+                {/* <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-orange-400 text-sm font-semibold flex items-center">
+                    View Details
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </div> */}
+              </div>
+              
+              {/* Shine effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-500/10 to-transparent transform -skew-x-12 group-hover:translate-x-full transition-transform duration-1000"></div>
               </div>
             </div>
           ))}

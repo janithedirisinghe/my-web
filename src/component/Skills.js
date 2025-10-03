@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 
 const angular = "https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//angular.png"
 const nestjs = "https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//nest.png"
@@ -25,53 +25,75 @@ const skills = [
 ];
 
 const WhatIDo = () => {
+  const [isPaused, setIsPaused] = useState(false);
+  const scrollRef = useRef(null);
+
   return (
     <section id="what-i-do" className="py-20 bg-gray-900 text-white px-6">
       <div className="container mx-auto text-center">
-        <h2 className="text-5xl font-extrabold mb-8 text-red-700 drop-shadow-lg">What I Do</h2>
+        <h2 className="text-5xl font-extrabold mb-12 text-red-700 drop-shadow-lg">What I Do</h2>
         
-        <div className="overflow-x-auto flex space-x-6 p-4 snap-x" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        <div 
+          className="overflow-x-hidden relative"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           <style>
             {`
-              #what-i-do .overflow-x-auto::-webkit-scrollbar {
+              #what-i-do .overflow-x-hidden::-webkit-scrollbar {
                 display: none;
               }
               @keyframes scroll {
                 0% { transform: translateX(0); }
-                100% { transform: translateX(calc(-320px * ${skills.length})); }
+                100% { transform: translateX(calc(-340px * ${skills.length})); }
               }
               #what-i-do .scrolling-loop {
                 display: flex;
-                animation: scroll 20s linear infinite;
+                animation: scroll 30s linear infinite;
+                animation-play-state: ${isPaused ? 'paused' : 'running'};
+              }
+              #what-i-do .scrolling-loop:hover {
+                animation-play-state: paused;
               }
             `}
           </style>
-          <div className="scrolling-loop">
-            {skills.map((skill, index) => (
+          <div className="scrolling-loop gap-6" ref={scrollRef}>
+            {[...skills, ...skills].map((skill, index) => (
               <div
                 key={index}
-                className="min-w-[320px] bg-cover bg-center rounded-2xl p-4 shadow-lg snap-center relative flex items-center justify-center text-center min-h-96"
-                style={{ backgroundImage: `url(${skill.image})`, backdropFilter: 'blur(10px)' }}
+                className="group min-w-[340px] bg-cover bg-center rounded-2xl shadow-2xl snap-center relative flex items-center justify-center text-center min-h-96 overflow-hidden border-2 border-gray-700 hover:border-orange-500/70 transition-all duration-500 hover:scale-105"
+                style={{ backgroundImage: `url(${skill.image})` }}
               >
-                <div className="bg-black bg-opacity-50 p-6 rounded-lg w-full h-full flex flex-col justify-center items-center">
-                  <h3 className="text-4xl font-bold text-white drop-shadow-md">{skill.title}</h3>
-                  <p className="mt-3 text-lg text-gray-300">{skill.description}</p>
+                <div className="bg-black/60 group-hover:bg-black/40 p-8 rounded-lg w-full h-full flex flex-col justify-center items-center backdrop-blur-sm transition-all duration-500">
+                  <div className="transform group-hover:scale-110 transition-transform duration-500">
+                    <h3 className="text-4xl font-bold text-white drop-shadow-md mb-4 group-hover:text-orange-400 transition-colors duration-300">
+                      {skill.title}
+                    </h3>
+                    <p className="mt-3 text-lg text-gray-300 group-hover:text-white transition-colors duration-300 leading-relaxed">
+                      {skill.description}
+                    </p>
+                  </div>
+                  
+                  {/* Hover indicator */}
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
+                  </div>
                 </div>
-              </div>
-            ))}
-            {skills.map((skill, index) => (
-              <div
-                key={index + skills.length}
-                className="min-w-[320px] bg-cover bg-center rounded-2xl p-5 shadow-lg snap-center relative flex items-center justify-center text-center min-h-96"
-                style={{ backgroundImage: `url(${skill.image})`, backdropFilter: 'blur(10px)' }}
-              >
-                <div className="bg-black bg-opacity-50 p-6 rounded-lg w-full h-full flex flex-col justify-center items-center">
-                  <h3 className="text-4xl font-bold text-white drop-shadow-md">{skill.title}</h3>
-                  <p className="mt-3 text-lg text-gray-300">{skill.description}</p>
+                
+                {/* Shine effect on hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-500/20 to-transparent transform -skew-x-12 group-hover:translate-x-full transition-transform duration-1000"></div>
                 </div>
               </div>
             ))}
           </div>
+          
+          {/* Pause indicator */}
+          {isPaused && (
+            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-orange-900/80 text-white px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm border border-orange-500/50">
+              Paused - Hover to explore
+            </div>
+          )}
         </div>
       </div>
     </section>
