@@ -13,7 +13,7 @@ function Navbar() {
       setScrolled(window.scrollY > 50);
       
       // Update active section based on scroll position
-      const sections = ['home', 'projects', 'what-i-do', 'galary', 'about-me', 'contacts'];
+      const sections = ['home', 'projects', 'websites', 'what-i-do', 'galary', 'education', 'achievements', 'about-me', 'contacts'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -72,6 +72,14 @@ function Navbar() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 group-hover:w-full transition-all duration-300"></span>
             </a>
             <a 
+              href="#websites" 
+              onClick={(e) => scrollToSection(e, 'websites')}
+              className={navLinkClass('websites')}
+            >
+              Websites
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a 
               href="#what-i-do" 
               onClick={(e) => scrollToSection(e, 'what-i-do')}
               className={navLinkClass('what-i-do')}
@@ -85,6 +93,22 @@ function Navbar() {
               className={navLinkClass('galary')}
             >
               Gallery
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a 
+              href="#education" 
+              onClick={(e) => scrollToSection(e, 'education')}
+              className={navLinkClass('education')}
+            >
+              Education
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a 
+              href="#achievements" 
+              onClick={(e) => scrollToSection(e, 'achievements')}
+              className={navLinkClass('achievements')}
+            >
+              Achievements
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 group-hover:w-full transition-all duration-300"></span>
             </a>
             <a 
@@ -107,18 +131,20 @@ function Navbar() {
         </div>
         <div className="hidden md:flex space-x-4">
           <a 
-            href="https://github.com" 
+            href="https://github.com/janithedirisinghe" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="text-white hover:text-orange-400 transition-colors duration-300 text-xl"
+            aria-label="GitHub Profile"
           >
             <FontAwesomeIcon icon={faGithub} />
           </a>
           <a 
-            href="https://linkedin.com" 
+            href="https://www.linkedin.com/in/janith-chathusanka-edirisinghe-591179220" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="text-white hover:text-orange-400 transition-colors duration-300 text-xl"
+            aria-label="LinkedIn Profile"
           >
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
@@ -148,6 +174,13 @@ function Navbar() {
             Projects
           </a>
           <a 
+            href="#websites" 
+            onClick={(e) => scrollToSection(e, 'websites')}
+            className="text-white hover:text-orange-400 transition-colors duration-300 py-2 border-b border-gray-700 hover:border-orange-400"
+          >
+            Websites
+          </a>
+          <a 
             href="#what-i-do" 
             onClick={(e) => scrollToSection(e, 'what-i-do')}
             className="text-white hover:text-orange-400 transition-colors duration-300 py-2 border-b border-gray-700 hover:border-orange-400"
@@ -160,6 +193,20 @@ function Navbar() {
             className="text-white hover:text-orange-400 transition-colors duration-300 py-2 border-b border-gray-700 hover:border-orange-400"
           >
             Gallery
+          </a>
+          <a 
+            href="#education" 
+            onClick={(e) => scrollToSection(e, 'education')}
+            className="text-white hover:text-orange-400 transition-colors duration-300 py-2 border-b border-gray-700 hover:border-orange-400"
+          >
+            Education
+          </a>
+          <a 
+            href="#achievements" 
+            onClick={(e) => scrollToSection(e, 'achievements')}
+            className="text-white hover:text-orange-400 transition-colors duration-300 py-2 border-b border-gray-700 hover:border-orange-400"
+          >
+            Achievements
           </a>
           <a 
             href="#about-me" 
@@ -177,18 +224,20 @@ function Navbar() {
           </a>
           <div className="flex space-x-4 pt-2 justify-center">
             <a 
-              href="https://github.com" 
+              href="https://github.com/janithedirisinghe" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-white hover:text-orange-400 transition-colors duration-300 text-xl"
+              aria-label="GitHub Profile"
             >
               <FontAwesomeIcon icon={faGithub} />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/janith-chathusanka-edirisinghe-591179220" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-white hover:text-orange-400 transition-colors duration-300 text-xl"
+              aria-label="LinkedIn Profile"
             >
               <FontAwesomeIcon icon={faLinkedin} />
             </a>

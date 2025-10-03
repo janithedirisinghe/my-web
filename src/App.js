@@ -6,6 +6,9 @@ import AboutMe from './component/AboutMe';
 import Home from './component/Home';
 import Skills from './component/Skills';
 import Gallery from './component/Gallery';
+import Websites from './component/Websites';
+import Education from './component/Education';
+import Achievements from './component/Achievements';
 
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -31,8 +34,11 @@ function App() {
       <Navbar />
       <Home />
       <Projects />
+      <Websites />
       <Skills />
       <Gallery />
+      <Education />
+      <Achievements />
       <AboutMe />
       <Contacts />
       
