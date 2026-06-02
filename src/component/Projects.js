@@ -109,10 +109,21 @@ them via WhatsApp or email
     },
     {
       id: 6,
-title: 'WedEase - Wedding Service Provider Portal',
-description: `I am developing *WedEase*, a platform that connects customers and wedding service providers to discover, compare, and book various wedding services. The platform, built with Angular for the frontend, Spring Boot for the backend, and MySQL for the database, provides an intuitive user experience for both clients and vendors. It enables seamless communication, booking, and management of wedding services, making the wedding planning process more efficient and accessible. This project aims to create a comprehensive and reliable solution for couples to find trusted wedding vendors while offering service providers a streamlined method to manage bookings and client interactions.`,
-smallDescription: `Building a wedding service provider portal to connect customers with vendors for discovering, comparing, and booking wedding services.`,
+title: 'Centralized Wedding Services Marketplace',
+description: `Built a scalable digital marketplace platform to connect users with wedding service providers such as venues, photographers, and vendors. Implemented advanced search and filtering features to improve vendor discovery and user experience. Incorporated recommendation and communication features to support better decision-making and efficient service selection. This project was also the subject of a published research paper at the International Conference on Multidisciplinary Approaches – 2026, University of Sri Jayewardenepura.`,
+smallDescription: `Built a scalable digital marketplace to connect users with wedding service providers, with advanced search, filtering, and recommendation features.`,
 technologies: ['Angular', 'Spring Boot', 'MySQL'],
+images: [
+]
+
+    },
+    {
+      id: 8,
+title: 'Sri Lankan Tuskers – Community Reporting & Tracking System',
+description: `Built a full-stack community platform for reporting and tracking Sri Lankan tusker sightings, now live at srilankantuskers.com. Engineered a real-time interactive map visualizing tusker locations, supporting conservation monitoring and data-driven decision-making. Implemented SEO optimization and a centralized MongoDB database for sighting, health, and location records submitted by the public.`,
+smallDescription: `Live community platform for reporting and tracking Sri Lankan tusker sightings, with a real-time interactive map and centralized database.`,
+liveUrl: 'https://srilankantuskers.com',
+technologies: ['NestJS', 'Vue.js', 'MongoDB'],
 images: [
 ]
 

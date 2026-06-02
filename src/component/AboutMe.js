@@ -61,17 +61,17 @@ function AboutMe() {
           }`}>
             <div className="space-y-6">
               <p className="text-lg leading-relaxed text-gray-300">
-                Hello! I am a passionate developer with experience in various modern web technologies. I enjoy creating beautiful and functional web applications that make a difference.
+                I&apos;m a final-year BSc. Information Technology &amp; Management student at the University of Moratuwa (CGPA 3.787/4.00, expected 2026) with hands-on full-stack experience spanning enterprise software, community platforms, and product tools.
               </p>
               <p className="text-lg leading-relaxed text-gray-300">
-                In my free time, I love to learn new skills, work on personal projects, and explore the latest trends in technology. I believe in continuous learning and improvement.
+                I interned at <span className="text-orange-400 font-semibold">HSenid Business Solutions</span>, contributing to <span className="text-orange-400 font-semibold">People&apos;s HR</span> — a large-scale enterprise HR platform used across multiple organizations — using C# .NET MVC and Vue.js. I have published at two international research conferences (KDU 2024, USJ 2026).
               </p>
               <p className="text-lg leading-relaxed text-gray-300">
-                I am always eager to take on new challenges that allow me to grow both personally and professionally. Let&apos;s build something amazing together!
+                I deliver production applications using <span className="text-orange-400 font-semibold">TypeScript, Angular, Vue.js, NestJS, Spring Boot,</span> and <span className="text-orange-400 font-semibold">.NET</span>. Based in Gampaha, Sri Lanka — always eager to take on challenges that push both my technical and collaborative skills.
               </p>
               
               <a
-                href="https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//Janith%20Edirisinghe-CV.pdf"
+                href="https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images/Janith%20Edirisinghe%20-%20Software%20Engineer.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center mt-6 py-4 px-8 bg-gradient-to-r from-red-700 to-orange-600 hover:from-red-600 hover:to-orange-500 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-red-500/50"

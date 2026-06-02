@@ -1,5 +1,4 @@
-# Update the Sitemap URL to your production domain (e.g., https://your-domain.com).
 User-agent: *
 Allow: /
 
-Sitemap: https://your-domain.com/sitemap.xml
+Sitemap: https://janithchathusanka.vercel.app/sitemap.xml

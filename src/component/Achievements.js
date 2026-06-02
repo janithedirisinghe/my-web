@@ -9,6 +9,15 @@ const researchData = [
     type: 'Published Research',
     icon: '📝',
     color: 'orange'
+  },
+  {
+    id: 2,
+    title: 'Optimization Of Service Procurement in the Wedding Industry: A Centralized Digital Marketplace for Vendor Discovery and Management',
+    conference: 'International Conference on Multidisciplinary Approaches – 2026, University of Sri Jayewardenepura',
+    description: 'Investigated the development of a centralized web-based marketplace for the wedding industry aimed at improving vendor accessibility and service discovery efficiency. Analyzed the integration of advanced search, vendor management, and AI-driven recommendation systems to enhance customer decision-making and optimize the wedding service ecosystem.',
+    type: 'Published Research',
+    icon: '📄',
+    color: 'red'
   }
 ];
 
@@ -266,7 +275,7 @@ function Achievements() {
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-orange-500/30 text-center">
-            <div className="text-4xl font-bold text-orange-500 mb-2">1</div>
+            <div className="text-4xl font-bold text-orange-500 mb-2">2</div>
             <div className="text-gray-300 text-sm">Published Research</div>
           </div>
           <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-yellow-500/30 text-center">

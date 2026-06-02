@@ -5,12 +5,12 @@ const educationData = [
     id: 1,
     degree: 'B.Sc. (Hons) in Information Technology and Management',
     institution: 'Faculty of Information Technology, University of Moratuwa',
-    period: '2021 - Present',
+    period: '2022 - 2026 (Expected)',
     type: 'Undergraduate',
     achievements: [
       'L1S1 - Dean\'s List',
       'L2S2 - Dean\'s List',
-      'CGPA - 3.73/4.00'
+      'CGPA - 3.787/4.00'
     ],
     icon: '🎓',
     color: 'orange'
@@ -19,7 +19,7 @@ const educationData = [
     id: 2,
     degree: 'Diploma in Technology',
     institution: 'Esoft Metro Campus, Gampaha',
-    period: 'Completed',
+    period: '2021 – 2022',
     type: 'Diploma',
     achievements: [],
     icon: '📜',
@@ -42,9 +42,9 @@ const experienceData = [
     id: 1,
     position: 'Intern Software Engineer',
     company: 'hSenid Business Solutions',
-    period: 'Current',
+    period: 'Feb 2025 – Oct 2025',
     type: 'Internship',
-    description: 'Gaining hands-on experience in software development, working with modern technologies and contributing to real-world projects.',
+    description: 'Developed and shipped features for "People\'s HR", an enterprise HR platform serving thousands of employees across multiple client organizations, using C# .NET MVC and Vue.js. Identified and resolved production defects, reducing recurring bug reports. Collaborated cross-functionally with senior engineers to maintain and extend MS SQL Server data models supporting complex HR workflows.',
     icon: '💼',
     color: 'red'
   }

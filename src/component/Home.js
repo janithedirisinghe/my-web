@@ -190,7 +190,7 @@ function Home() {
             <pre className="bg-gray-800 p-6 rounded-b-lg shadow-2xl text-left text-orange-400 whitespace-pre-wrap border border-orange-900/30 hover:border-orange-500/50 transition-all duration-300 hover:shadow-orange-500/20 font-mono text-sm">
               <Typewriter
                 words={[
-                  `const developer = {\n  name: "Janith Edirisinghe",\n  role: "Full Stack Developer",\n  location: "Sri Lanka 🇱🇰",\n  skills: ["React", "Node.js", "IoT"],\n  passion: "Building the future"\n};`
+                  `const developer = {\n  name: "Janith Edirisinghe",\n  role: "Full Stack Developer",\n  location: "Sri Lanka 🇱🇰",\n  skills: [\n    "Angular", "Vue.js", "React",\n    "NestJS", "Spring Boot", ".NET",\n    "TypeScript", "MySQL", "MongoDB"\n  ],\n  cgpa: "3.787 / 4.00",\n  passion: "Building impactful software"\n};`
                 ]}
                 loop={false}
                 cursor
