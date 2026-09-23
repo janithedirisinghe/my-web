@@ -21,26 +21,26 @@ const image19 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/publ
 const image20 = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/website-images//gal20.jpeg'
 
 const images = [
-  { src: image1, alt: 'Image 1', description: 'Description for Image 1' },
-  { src: image2, alt: 'Image 2', description: 'Description for Image 2' },
-  { src: image5, alt: 'Image 3', description: 'Description for Image 3' },
-  { src: image4, alt: 'Image 4', description: 'Description for Image 4' },
-  { src: image3, alt: 'Image 5', description: 'Description for Image 5' },
-  { src: image6, alt: 'Image 6', description: 'Description for Image 6' },
-  { src: image7, alt: 'Image 7', description: 'Description for Image 7' },
-  { src: image8, alt: 'Image 8', description: 'Description for Image 8' },
-  { src: image9, alt: 'Image 9', description: 'Description for Image 9' },
-  { src: image10, alt: 'Image 10', description: 'Description for Image 10' },
-  { src: image11, alt: 'Image 11', description: 'Description for Image 11' },
-  { src: image12, alt: 'Image 12', description: 'Description for Image 12' },
-  { src: image13, alt: 'Image 13', description: 'Description for Image 13' },
-  { src: image14, alt: 'Image 14', description: 'Description for Image 14' },
-  { src: image15, alt: 'Image 15', description: 'Description for Image 15' },
-  { src: image16, alt: 'Image 16', description: 'Description for Image 16' },
-  { src: image17, alt: 'Image 17', description: 'Description for Image 17' },
-  { src: image18, alt: 'Image 18', description: 'Description for Image 18' },
-  { src: image19, alt: 'Image 19', description: 'Description for Image 19' },
-  { src: image20, alt: 'Image 20', description: 'Description for Image 20' },
+  { src: image1, alt: 'Image 1' },
+  { src: image2, alt: 'Image 2' },
+  { src: image5, alt: 'Image 3' },
+  { src: image4, alt: 'Image 4' },
+  { src: image3, alt: 'Image 5' },
+  { src: image6, alt: 'Image 6' },
+  { src: image7, alt: 'Image 7' },
+  { src: image8, alt: 'Image 8' },
+  { src: image9, alt: 'Image 9' },
+  { src: image10, alt: 'Image 10' },
+  { src: image11, alt: 'Image 11' },
+  { src: image12, alt: 'Image 12' },
+  { src: image13, alt: 'Image 13' },
+  { src: image14, alt: 'Image 14' },
+  { src: image15, alt: 'Image 15' },
+  { src: image16, alt: 'Image 16' },
+  { src: image17, alt: 'Image 17' },
+  { src: image18, alt: 'Image 18' },
+  { src: image19, alt: 'Image 19' },
+  { src: image20, alt: 'Image 20' },
 ];
 
 function Gallery() {
@@ -98,9 +98,6 @@ function Gallery() {
               onClick={() => openModal(image, index)}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
-            <div className="absolute bottom-0 left-0 w-full bg-gray-900/90 backdrop-blur-sm p-4 text-white text-center transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-              <p className="text-sm font-semibold">{image.description}</p>
-            </div>
             {/* Zoom icon */}
             <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="bg-orange-500/80 p-2 rounded-full">
@@ -171,8 +168,7 @@ function Gallery() {
                 alt={selectedImage.alt}
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 to-transparent p-6 rounded-b-lg">
-                <p className="text-white text-lg font-semibold">{selectedImage.description}</p>
-                <p className="text-gray-400 text-sm mt-2">Image {currentImageIndex + 1} of {images.length}</p>
+                <p className="text-gray-300 text-sm text-center">Image {currentImageIndex + 1} of {images.length}</p>
               </div>
             </div>
           </div>
