@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './component/Navbar';
 import Projects from './component/Projects';
 import Contacts from './component/Contacts';
@@ -9,6 +10,35 @@ import Gallery from './component/Gallery';
 import Websites from './component/Websites';
 import Education from './component/Education';
 import Achievements from './component/Achievements';
+import Research from './pages/Research';
+import ResearchArticle from './pages/ResearchArticle';
+
+function Portfolio() {
+  const location = useLocation();
+
+  // Arriving from another route as "/#projects" — scroll once the sections are mounted.
+  useEffect(() => {
+    if (!location.hash) return;
+    const element = document.getElementById(location.hash.slice(1));
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [location]);
+
+  return (
+    <>
+      <Home />
+      <Projects />
+      <Websites />
+      <Skills />
+      <Gallery />
+      <Education />
+      <Achievements />
+      <AboutMe />
+      <Contacts />
+    </>
+  );
+}
 
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -30,31 +60,30 @@ function App() {
   };
 
   return (
-    <div className="scroll-smooth">
-      <Navbar />
-      <Home />
-      <Projects />
-      <Websites />
-      <Skills />
-      <Gallery />
-      <Education />
-      <Achievements />
-      <AboutMe />
-      <Contacts />
-      
-      {/* Scroll to Top Button */}
-      <button
-        onClick={scrollToTop}
-        className={`fixed bottom-8 right-8 z-50 p-4 bg-gradient-to-r from-red-700 to-orange-600 hover:from-red-600 hover:to-orange-500 text-white rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-red-500/50 ${
-          showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16 pointer-events-none'
-        }`}
-        aria-label="Scroll to top"
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-        </svg>
-      </button>
-    </div>
+    <BrowserRouter>
+      <div className="scroll-smooth">
+        <Navbar />
+
+        <Routes>
+          <Route path="/" element={<Portfolio />} />
+          <Route path="/research" element={<Research />} />
+          <Route path="/research/:slug" element={<ResearchArticle />} />
+        </Routes>
+
+        {/* Scroll to Top Button */}
+        <button
+          onClick={scrollToTop}
+          className={`fixed bottom-8 right-8 z-50 p-4 bg-gradient-to-r from-red-700 to-orange-600 hover:from-red-600 hover:to-orange-500 text-white rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 hover:shadow-red-500/50 ${
+            showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16 pointer-events-none'
+          }`}
+          aria-label="Scroll to top"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          </svg>
+        </button>
+      </div>
+    </BrowserRouter>
   );
 }
 

@@ -61,13 +61,13 @@ function AboutMe() {
           }`}>
             <div className="space-y-6">
               <p className="text-lg leading-relaxed text-gray-300">
-                I&apos;m a final-year BSc. Information Technology &amp; Management student at the University of Moratuwa (CGPA 3.787/4.00, expected 2026) with hands-on full-stack experience spanning enterprise software, community platforms, and product tools.
+                I&apos;m an <span className="text-orange-400 font-semibold">Associate Software Engineer</span> and an IT &amp; Management graduate of the University of Moratuwa with <span className="text-orange-400 font-semibold">First Class honours (GPA 3.81/4.00)</span>, with hands-on experience in enterprise software development, RESTful APIs, and Agile product delivery.
               </p>
               <p className="text-lg leading-relaxed text-gray-300">
-                I interned at <span className="text-orange-400 font-semibold">HSenid Business Solutions</span>, contributing to <span className="text-orange-400 font-semibold">People&apos;s HR</span> — a large-scale enterprise HR platform used across multiple organizations — using C# .NET MVC and Vue.js. I have published at two international research conferences (KDU 2024, USJ 2026).
+                I interned at <span className="text-orange-400 font-semibold">HSenid Business Solutions</span>, contributing to <span className="text-orange-400 font-semibold">People&apos;s HR</span> — a large-scale enterprise HR platform used across multiple organizations — using ASP.NET MVC, VB.NET, Knockout.js and Vue.js. I have published at two international research conferences (KDU 2024, USJ 2026).
               </p>
               <p className="text-lg leading-relaxed text-gray-300">
-                I deliver production applications using <span className="text-orange-400 font-semibold">TypeScript, Angular, Vue.js, NestJS, Spring Boot,</span> and <span className="text-orange-400 font-semibold">.NET</span>. Based in Gampaha, Sri Lanka — always eager to take on challenges that push both my technical and collaborative skills.
+                I deliver production applications using <span className="text-orange-400 font-semibold">Angular, Vue.js, TypeScript, NestJS, Spring Boot,</span> and <span className="text-orange-400 font-semibold">.NET</span>, and ship them on <span className="text-orange-400 font-semibold">AWS and Azure</span> with Terraform, Docker and Kubernetes. Based in Gampaha, Sri Lanka — always eager to take on challenges that push both my technical and collaborative skills.
               </p>
               
               <a

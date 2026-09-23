@@ -3,14 +3,14 @@ import React, { useState, useEffect } from 'react';
 const educationData = [
   {
     id: 1,
-    degree: 'B.Sc. (Hons) in Information Technology and Management',
+    degree: 'BSc in Information Technology and Management - First Class',
     institution: 'Faculty of Information Technology, University of Moratuwa',
-    period: '2022 - 2026 (Expected)',
+    period: 'Aug 2022 - 2026',
     type: 'Undergraduate',
     achievements: [
-      'L1S1 - Dean\'s List',
-      'L2S2 - Dean\'s List',
-      'CGPA - 3.787/4.00'
+      'First Class Honours - GPA 3.81/4.00',
+      'Dean\'s List - Semesters 1, 4, 5, 7 and 8',
+      'SGPA - 3.81, 3.82, 3.80, 4.00 and 3.91'
     ],
     icon: '🎓',
     color: 'orange'
@@ -18,8 +18,8 @@ const educationData = [
   {
     id: 2,
     degree: 'Diploma in Technology',
-    institution: 'Esoft Metro Campus, Gampaha',
-    period: '2021 – 2022',
+    institution: 'ESoft Metro Campus, Gampaha',
+    period: 'Jan 2021 – Jul 2022',
     type: 'Diploma',
     achievements: [],
     icon: '📜',
@@ -29,7 +29,7 @@ const educationData = [
     id: 3,
     degree: 'GCE A/L (Physical Science Stream)',
     institution: 'Walisinghe Harischandra College, Anuradhapura',
-    period: '2011 - 2020',
+    period: 'Jul 2011 - Aug 2020',
     type: 'Secondary Education',
     achievements: [],
     icon: '🏫',
@@ -41,10 +41,10 @@ const experienceData = [
   {
     id: 1,
     position: 'Intern Software Engineer',
-    company: 'hSenid Business Solutions',
+    company: 'HSenid Business Solutions, Colombo',
     period: 'Feb 2025 – Oct 2025',
     type: 'Internship',
-    description: 'Developed and shipped features for "People\'s HR", an enterprise HR platform serving thousands of employees across multiple client organizations, using C# .NET MVC and Vue.js. Identified and resolved production defects, reducing recurring bug reports. Collaborated cross-functionally with senior engineers to maintain and extend MS SQL Server data models supporting complex HR workflows.',
+    description: 'Developed and shipped features for "People\'s HR", an enterprise HR platform serving thousands of employees across multiple client organizations, using ASP.NET MVC, Visual Basic .NET (VB.NET), Knockout.js and Vue.js. Identified and resolved production defects, reducing recurring bug reports and contributing to a more stable release cycle in a large-scale enterprise codebase. Collaborated with Agile Scrum teams to implement RESTful services and maintain MS SQL Server data models supporting complex HR workflows.',
     icon: '💼',
     color: 'red'
   }

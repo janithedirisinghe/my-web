@@ -20,16 +20,6 @@ const websites = [
     technologies: ['Next.js', 'Admin Panel', 'Blog Management'],
     type: 'Tech Blog',
     features: ['Tech Articles', 'Tool Reviews', 'Admin Panel', 'Article Management']
-  },
-  {
-    id: 3,
-    title: 'Code Diff Tool',
-    url: 'https://www.codedifftool.com/',
-    description: 'A specialized comparison tool designed to efficiently compare code snippets and SQL scripts. Built during my internship to streamline the development workflow and improve productivity when working with multiple SQL scripts and code versions.',
-    shortDescription: 'Code and SQL script comparison tool for developers.',
-    technologies: ['React', 'Diff Algorithm', 'SQL Support'],
-    type: 'Developer Tool',
-    features: ['Code Comparison', 'SQL Script Diff', 'Syntax Highlighting', 'Side-by-Side View']
   }
 ];
 
@@ -78,7 +68,7 @@ function Websites() {
           Live platforms and tools I&apos;ve built and maintain
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {websites.map((website, index) => (
             <div
               key={website.id}

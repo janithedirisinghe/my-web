@@ -15,6 +15,31 @@ const pr2e = 'https://untgtsclbjlgemwljimq.supabase.co/storage/v1/object/public/
 
 const projects = [
   {
+    id: 9,
+    title: 'Fish Manufacturing ERP System',
+    description: `Developing a commercial offline-first SaaS ERP for fish processors in the Philippines and Malaysia, targeting a USD 9B+ market that currently has no affordable, localized software solution. Implemented the inventory module with catch-weight recording, FEFO stock rotation, and dispatch with weight reconciliation. Developed the production module with batch traceability, real-time yield tracking, quality control, and export compliance reporting. Built with Angular on the frontend and .NET Core with MSSQL on the backend, designed to keep operating on the factory floor without a reliable internet connection. (Aug 2026 – Present)`,
+    smallDescription: `Commercial offline-first SaaS ERP for fish processors in the Philippines and Malaysia, covering catch-weight inventory, FEFO rotation, batch traceability and export compliance.`,
+    technologies: ['Angular', '.NET Core', 'MSSQL', 'TypeScript'],
+    images: []
+  },
+  {
+    id: 10,
+    title: 'Cloud-Native Microservices Deployment (CloudMart) – AWS EKS',
+    description: `Deployed a microservices application on AWS EKS using Terraform for Infrastructure as Code (IaC) and GitHub Actions for CI/CD, automating the full build-to-deploy pipeline. Configured Kubernetes workloads, IAM roles and policies, and VPC networking, along with S3, CloudWatch and Route 53, gaining end-to-end ownership of a cloud-native delivery pipeline from container build through to production rollout. (Apr 2026 – Jul 2026)`,
+    smallDescription: `Microservices application deployed on AWS EKS with Terraform IaC and GitHub Actions CI/CD, including Kubernetes workloads, IAM and VPC networking.`,
+    technologies: ['AWS EKS', 'Terraform', 'Kubernetes', 'GitHub Actions', 'Docker'],
+    images: []
+  },
+  {
+    id: 8,
+    title: 'Sri Lankan Tuskers – Community Reporting & Tracking System',
+    description: `Built a full-stack community platform for reporting and tracking Sri Lankan tusker sightings, now live at srilankantuskers.com. Engineered a real-time interactive map visualizing tusker locations, supporting conservation monitoring and data-driven decision-making. Implemented SEO improvements and a centralized MongoDB database for sighting, health, and location records submitted by the public. (Aug 2025 – Present)`,
+    smallDescription: `Live community platform for reporting and tracking Sri Lankan tusker sightings, with a real-time interactive map and centralized database.`,
+    liveUrl: 'https://srilankantuskers.com',
+    technologies: ['NestJS', 'Vue.js', 'MongoDB'],
+    images: []
+  },
+  {
     id: 1,
     title: 'Resource Portfolio Management System for Tapro Technology',
     description: `In the dynamic landscape of project management, the allocation and management of resources remain a significant challenge for organizations striving for efficiency and optimal outcomes. 
@@ -110,20 +135,9 @@ them via WhatsApp or email
     {
       id: 6,
 title: 'Centralized Wedding Services Marketplace',
-description: `Built a scalable digital marketplace platform to connect users with wedding service providers such as venues, photographers, and vendors. Implemented advanced search and filtering features to improve vendor discovery and user experience. Incorporated recommendation and communication features to support better decision-making and efficient service selection. This project was also the subject of a published research paper at the International Conference on Multidisciplinary Approaches – 2026, University of Sri Jayewardenepura.`,
+description: `Built a scalable digital marketplace platform to connect users with wedding service providers such as venues, photographers, and vendors. Implemented advanced search and filtering features to improve vendor discovery and user experience. Incorporated recommendation and communication features to support better decision-making and efficient service selection. This project was also the subject of a published research paper at the International Conference on Multidisciplinary Approaches – 2026, University of Sri Jayewardenepura. (Apr 2025 – Jun 2026)`,
 smallDescription: `Built a scalable digital marketplace to connect users with wedding service providers, with advanced search, filtering, and recommendation features.`,
 technologies: ['Angular', 'Spring Boot', 'MySQL'],
-images: [
-]
-
-    },
-    {
-      id: 8,
-title: 'Sri Lankan Tuskers – Community Reporting & Tracking System',
-description: `Built a full-stack community platform for reporting and tracking Sri Lankan tusker sightings, now live at srilankantuskers.com. Engineered a real-time interactive map visualizing tusker locations, supporting conservation monitoring and data-driven decision-making. Implemented SEO optimization and a centralized MongoDB database for sighting, health, and location records submitted by the public.`,
-smallDescription: `Live community platform for reporting and tracking Sri Lankan tusker sightings, with a real-time interactive map and centralized database.`,
-liveUrl: 'https://srilankantuskers.com',
-technologies: ['NestJS', 'Vue.js', 'MongoDB'],
 images: [
 ]
 

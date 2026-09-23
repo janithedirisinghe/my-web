@@ -1,4 +1,5 @@
 import React, { useRef, Suspense, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useGLTF, Stage, PresentationControls, useAnimations } from '@react-three/drei';
 import { Typewriter } from 'react-simple-typewriter';
@@ -33,18 +34,18 @@ function Home() {
   const [showStats, setShowStats] = useState(false);
 
   const roles = [
+    'Associate Software Engineer',
     'Full Stack Developer',
-    'Software Engineer',
-    'IoT Enthusiast',
-    'Tech Blogger',
+    'Cloud & DevOps Enthusiast',
+    'Published Researcher',
     'Problem Solver'
   ];
 
   const stats = [
-    // { number: '7+', label: 'Projects', icon: '💻' },
-    // { number: '3', label: 'Live Websites', icon: '🌐' },
-    // { number: '3.73', label: 'CGPA', icon: '📚' },
-    // { number: '6+', label: 'Hackathons', icon: '🏆' }
+    { number: '9+', label: 'Projects', icon: '💻' },
+    { number: '2', label: 'Research Papers', icon: '📝' },
+    { number: '3.81', label: 'GPA / 4.00', icon: '📚' },
+    { number: '6+', label: 'Hackathons', icon: '🏆' }
   ];
 
   useEffect(() => {
@@ -107,8 +108,8 @@ function Home() {
         <p className={`text-lg md:text-xl mb-12 subtext-shimmer max-w-3xl mx-auto transition-all duration-1000 delay-200 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          Passionate about building innovative solutions and exploring cutting-edge technologies.
-          Let&apos;s create something amazing together! 🚀
+          IT &amp; Management graduate with First Class honours, building enterprise software,
+          RESTful APIs and cloud-native systems. Let&apos;s create something amazing together! 🚀
         </p>
 
         {/* CTA Buttons */}
@@ -133,6 +134,18 @@ function Home() {
             </svg>
             Get In Touch
           </button>
+          <Link
+            to="/research"
+            className="group px-8 py-4 bg-transparent border-2 border-orange-500 hover:bg-orange-500/10 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Research
+            <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
         </div>
 
         {/* Main Content Grid */}
@@ -190,7 +203,7 @@ function Home() {
             <pre className="bg-gray-800 p-6 rounded-b-lg shadow-2xl text-left text-orange-400 whitespace-pre-wrap border border-orange-900/30 hover:border-orange-500/50 transition-all duration-300 hover:shadow-orange-500/20 font-mono text-sm">
               <Typewriter
                 words={[
-                  `const developer = {\n  name: "Janith Edirisinghe",\n  role: "Full Stack Developer",\n  location: "Sri Lanka 🇱🇰",\n  skills: [\n    "Angular", "Vue.js", "React",\n    "NestJS", "Spring Boot", ".NET",\n    "TypeScript", "MySQL", "MongoDB"\n  ],\n  cgpa: "3.787 / 4.00",\n  passion: "Building impactful software"\n};`
+                  `const developer = {\n  name: "Janith Edirisinghe",\n  role: "Associate Software Engineer",\n  location: "Gampaha, Sri Lanka 🇱🇰",\n  skills: [\n    "Angular", "Vue.js", "React",\n    "NestJS", "Spring Boot", ".NET",\n    "TypeScript", "AWS", "Terraform"\n  ],\n  gpa: "3.81 / 4.00 (First Class)",\n  passion: "Building impactful software"\n};`
                 ]}
                 loop={false}
                 cursor
